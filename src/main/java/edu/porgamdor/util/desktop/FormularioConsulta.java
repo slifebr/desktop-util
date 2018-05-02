@@ -8,8 +8,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import edu.porgamdor.util.desktop.ss.SSGrade;
-import edu.porgamdor.util.desktop.ss.SSBotao;
-import java.awt.GridBagConstraints;
 
 public class FormularioConsulta extends Formulario {
 	private JPanel filtro = new JPanel();
@@ -31,4 +29,12 @@ public class FormularioConsulta extends Formulario {
 	public SSGrade getTabela() {
 		return tabela;
 	}
+	/*
+	// metodos comuns
+	private void exibirCadastro(Estado entidade) {
+		Formulario frm = SpringDesktopApp.getBean(formInclusao);
+		frm.setEntidade(entidade);
+		this.exibir(frm);
+	}	
+	*/
 }
