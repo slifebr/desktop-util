@@ -90,7 +90,7 @@ public abstract class FrmLogin extends JFrame {
 		panel_1.add(btSair);
 		txtLogin.setTudoMaiusculo(false);
 		txtSenha.setTudoMaiusculo(false);
-		txtLogin.setText("login");
+		txtLogin.setText("tandera");
 		txtSenha.setText("1234");
 
 		btSair.addActionListener(new ActionListener() {

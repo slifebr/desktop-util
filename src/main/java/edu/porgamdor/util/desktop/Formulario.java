@@ -85,7 +85,7 @@ public abstract class Formulario extends JPanel {
 		if (frm != this) {
 			frm.setMdi(this.getMdi());
 		}
-		JInternalFrame internal = new JInternalFrame("CFIP - Formulário");
+		JInternalFrame internal = new JInternalFrame("Tandera");
 		internal.setVisible(true);
 		internal.setResizable(true);
 		internal.setContentPane(frm);
