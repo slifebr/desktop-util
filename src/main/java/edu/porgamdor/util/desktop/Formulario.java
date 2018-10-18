@@ -7,7 +7,6 @@ import java.awt.LayoutManager;
 import java.beans.PropertyVetoException;
 
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -17,6 +16,7 @@ import javax.swing.border.EtchedBorder;
 import edu.porgamdor.util.desktop.ss.SSCabecalho;
 import edu.porgamdor.util.desktop.ss.SSMensagem;
 import edu.porgamdor.util.desktop.ss.SSRodape;
+import edu.porgamdor.util.desktop.ss.SSToolBar;
 import edu.porgamdor.util.desktop.ss.util.Imagem;
 
 //WindowBuilder
@@ -28,6 +28,7 @@ public abstract class Formulario extends JPanel {
 	private SSCabecalho cabecalho = new SSCabecalho();
 	private JPanel conteudo = new JPanel();
 	private SSRodape rodape = new SSRodape();
+	//private SSToolBar toolBar = new SSToolBar();
 	private MDI mdi;
 
 	public Formulario() {
@@ -42,6 +43,7 @@ public abstract class Formulario extends JPanel {
 		this.setDescricao("Informe uma descrição");
 		this.add(cabecalho, BorderLayout.NORTH);
 		this.add(conteudo, BorderLayout.CENTER);
+		//this.add(toolBar, BorderLayout.SOUTH);
 		this.add(rodape, BorderLayout.SOUTH);
 	}
 
@@ -68,7 +70,11 @@ public abstract class Formulario extends JPanel {
 	public SSRodape getRodape() {
 		return rodape;
 	}
-
+/*
+	public SSToolBar getToolBar() {
+		return toolBar;
+	}
+*/	
 	public void setConteudoLayout(LayoutManager layout) {
 		conteudo.setLayout(layout);
 	}
