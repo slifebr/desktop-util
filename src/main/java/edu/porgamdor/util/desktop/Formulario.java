@@ -102,8 +102,13 @@ public abstract class Formulario extends JPanel {
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		}
-		mdi.getAreaTrabalho().add(internal);
-		mdi.getAreaTrabalho().getDesktopManager().activateFrame(internal);
+
+		// formulario poderá ser chamado de uma dialogo
+		// neste caso não terá uma janela pai?
+		//if (mdi != null) {
+			mdi.getAreaTrabalho().add(internal);
+			mdi.getAreaTrabalho().getDesktopManager().activateFrame(internal);
+		//}
 	}
 
 	public void fechar(Object resposta) {
@@ -138,7 +143,12 @@ public abstract class Formulario extends JPanel {
 	}
 
 	private void centralizar(JInternalFrame componente) {
-		Dimension dim = mdi.getSize();
+		Dimension dim;
+		if (mdi != null) {
+			dim = mdi.getSize();
+		} else {
+			dim = this.getSize();
+		}
 		int x = dim.width / 2 - componente.getSize().width / 2;
 		int y = dim.height / 2 - componente.getSize().height / 2;
 		y = y - 50; // opcional
