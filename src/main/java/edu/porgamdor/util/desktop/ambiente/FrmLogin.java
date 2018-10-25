@@ -32,7 +32,7 @@ public abstract class FrmLogin extends JFrame {
 
 	public FrmLogin() {
 		// this.setIconImage(Imagem.png("cfip", "janela").getImage());
-		setTitle("CFIP");
+		setTitle("Tandera");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(new Dimension(259, 261));
 		setLocationRelativeTo(null);
