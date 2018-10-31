@@ -29,7 +29,7 @@ public class MDI extends JFrame {
 	private JLabel lblAmbiente = new JLabel("AMBIENTE");
 	
 	private JLabel imagemFundo = new JLabel();
-	private ImageIcon imgFundo;
+	private ImageIcon imgFundo;  
 	public MDI() {
 		areaTrabalho.setBackground(Color.LIGHT_GRAY);
 		areaTrabalho.setVisible(true);
@@ -81,9 +81,9 @@ public class MDI extends JFrame {
 		setBounds(new Rectangle(870, 630));
 		setLocationRelativeTo(null);
 		
-		imgFundo = Imagem.jpg("cfip", "cfip");
+		imgFundo = Imagem.jpg("cfip", "EuCresci");
 		imagemFundo.setIcon(imgFundo);
-		imgFundo = Imagem.jpg("cfip", "cfip");
+		imgFundo = Imagem.jpg("cfip", "EuCresci");
 		imagemFundo.setIcon(imgFundo);
 		areaTrabalho.add(imagemFundo);
 		areaTrabalho.setBackground(Color.LIGHT_GRAY);
