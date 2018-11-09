@@ -81,8 +81,8 @@ public class MDI extends JFrame {
 		setBounds(new Rectangle(870, 630));
 		setLocationRelativeTo(null);
 		
-		imgFundo = Imagem.jpg("cfip", "EuCresci");
-		imagemFundo.setIcon(imgFundo);
+		//imgFundo = Imagem.jpg("cfip", "EuCresci");
+		//imagemFundo.setIcon(imgFundo);
 		imgFundo = Imagem.jpg("cfip", "EuCresci");
 		imagemFundo.setIcon(imgFundo);
 		areaTrabalho.add(imagemFundo);
