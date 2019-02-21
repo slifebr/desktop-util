@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.LayoutManager;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.beans.PropertyVetoException;
 
 import javax.swing.JDialog;
@@ -16,11 +18,12 @@ import javax.swing.border.EtchedBorder;
 import edu.porgamdor.util.desktop.ss.SSCabecalho;
 import edu.porgamdor.util.desktop.ss.SSMensagem;
 import edu.porgamdor.util.desktop.ss.SSRodape;
-import edu.porgamdor.util.desktop.ss.SSToolBar;
 import edu.porgamdor.util.desktop.ss.util.Imagem;
 
 //WindowBuilder
 //http://download.eclipse.org/windowbuilder/WB/integration/4.7/
+
+
 public abstract class Formulario extends JPanel {
 	private Object respostaDialogo;
 	private Formulario dono;
@@ -33,8 +36,11 @@ public abstract class Formulario extends JPanel {
 
 	public Formulario() {
 		init();
+		//addKeyListener(this);
+
 	}
 
+	
 	private void init() {
 		this.conteudo.setLayout(new GridBagLayout());
 		this.setLayout(new BorderLayout());
@@ -45,8 +51,10 @@ public abstract class Formulario extends JPanel {
 		this.add(conteudo, BorderLayout.CENTER);
 		//this.add(toolBar, BorderLayout.SOUTH);
 		this.add(rodape, BorderLayout.SOUTH);
+		
 	}
 
+	
 	public void setTitulo(String titulo) {
 		this.cabecalho.setTitulo(titulo);
 	}
@@ -190,4 +198,21 @@ public abstract class Formulario extends JPanel {
 	public void load() {
 
 	}
+	
+	/*
+	 * public void configurarEsc(JPanel frame) { // Colocando enter para pular de
+	 * campo System.out.println("configurarEsc"); HashSet conj = new
+	 * HashSet(frame.getFocusTraversalKeys(KeyboardFocusManager.
+	 * FORWARD_TRAVERSAL_KEYS));
+	 * 
+	 * conj.add(AWTKeyStroke.getAWTKeyStroke(KeyEvent.VK_ESCAPE, 0));
+	 * System.out.println("configurarEsc 2");
+	 * frame.setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS,
+	 * conj); System.out.println("configurarEsc 3");
+	 * 
+	 * }
+	 */
+    
+
+    
 }
