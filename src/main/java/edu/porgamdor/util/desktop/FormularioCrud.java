@@ -62,6 +62,7 @@ public abstract class FormularioCrud extends Formulario {
 		setAcaoBotao("Salvar",cmdSalvar,KeyEvent.VK_F10,buttonActionSalvar);
 		setAcaoBotao("Fechar",cmdSair,KeyEvent.VK_ESCAPE,buttonActionSair);
 	}	
+	
 	protected abstract void salvar();
 	
 	private void sair() {
