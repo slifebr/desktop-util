@@ -70,7 +70,7 @@ public class DesktopApp {
 	}
 	//OBTEM OU CRIA O ARQUIVO DE CONFIGURAÇÃO
 	private static File arquivoConfiguracao() throws Exception{
-		File diretorio = new File("/tandera/conf/");
+		File diretorio = new File("/tandera/config/");
 		File arquivo = new File(diretorio, "ambiente.properties");
 		if (!diretorio.exists()) {
 			diretorio.mkdirs();

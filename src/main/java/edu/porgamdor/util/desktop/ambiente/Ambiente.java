@@ -88,8 +88,8 @@ public class Ambiente {
 
 	//public static Ambiente LOCAL = new Ambiente("LOCAL","jdbc:hsqldb:file:/cfip/database/cfipdb","sa","sa");
 	//public static Ambiente SERVER = new Ambiente("SERVER","datasource:postgresql://localhost:5433/cfip","postgres","slife");
-	public static Ambiente LOCAL = new Ambiente("LOCAL","jdbc:postgresql://localhost:5433/tandera","postgres","slife");
-	public static Ambiente SERVER = new Ambiente("SERVER","jdbc:postgresql://localhost:5433/tandera","postgres","slife");
+	public static Ambiente LOCAL = new Ambiente("LOCAL","jdbc:postgresql://localhost:5432/tandera","postgres","slife");
+	public static Ambiente SERVER = new Ambiente("SERVER","jdbc:postgresql://localhost:5432/tandera","postgres","slife");
 
 	public static Ambiente[] ambientes={LOCAL,SERVER};
 	

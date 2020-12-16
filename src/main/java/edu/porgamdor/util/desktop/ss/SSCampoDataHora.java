@@ -39,8 +39,8 @@ public class SSCampoDataHora extends SSCampoMascara {
             getDefaultFormatterFactory().setDefaultFormatter(formatadorPadrao);
             getDefaultFormatterFactory().setDisplayFormatter(formatadorExibicao);
             
-            setFormato("dd/MM/yy");
-            setMascara("##/##/##");
+            setFormato("dd/MM/yyyy");
+            setMascara("##/##/####");
         } catch (Exception e) {
             e.printStackTrace();
         }       

@@ -32,7 +32,7 @@ public abstract class FrmLogin extends JFrame {
 
 	public FrmLogin() {
 		// this.setIconImage(Imagem.png("cfip", "janela").getImage());
-		setTitle("CFIP");
+		setTitle("Tandera");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(new Dimension(259, 261));
 		setLocationRelativeTo(null);
@@ -90,7 +90,7 @@ public abstract class FrmLogin extends JFrame {
 		panel_1.add(btSair);
 		txtLogin.setTudoMaiusculo(false);
 		txtSenha.setTudoMaiusculo(false);
-		txtLogin.setText("login");
+		txtLogin.setText("tandera");
 		txtSenha.setText("1234");
 
 		btSair.addActionListener(new ActionListener() {

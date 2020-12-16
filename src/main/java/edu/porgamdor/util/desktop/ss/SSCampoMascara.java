@@ -1,5 +1,7 @@
 package edu.porgamdor.util.desktop.ss;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.ParseException;
 
 import javax.swing.JFormattedTextField;
@@ -7,6 +9,7 @@ import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 
 import edu.porgamdor.util.desktop.ss.util.Texto;
+import edu.porgamdor.util.desktop.ss.util.Validacao;
 
 
 public class SSCampoMascara extends SSCampoTexto implements SSTextoComponente {
@@ -15,11 +18,11 @@ public class SSCampoMascara extends SSCampoTexto implements SSTextoComponente {
     private boolean formatarAoAplicar = false;
     
     public void setText(String text) {
-        /*if (formatarAoAplicar && Validacao.numero(text)) {            
+        if (formatarAoAplicar && Validacao.numero(text)) {            
             String formato = Texto.substitui(Texto.retiraSeparadores(getMascara()), "#", "0");
             NumberFormat nf = new DecimalFormat(formato);
             text = nf.format(Long.valueOf(text));            
-        }*/
+        }
         super.setText(text);
     }
     

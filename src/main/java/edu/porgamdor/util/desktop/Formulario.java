@@ -4,10 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.LayoutManager;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.beans.PropertyVetoException;
 
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -21,6 +22,8 @@ import edu.porgamdor.util.desktop.ss.util.Imagem;
 
 //WindowBuilder
 //http://download.eclipse.org/windowbuilder/WB/integration/4.7/
+
+
 public abstract class Formulario extends JPanel {
 	private Object respostaDialogo;
 	private Formulario dono;
@@ -28,12 +31,16 @@ public abstract class Formulario extends JPanel {
 	private SSCabecalho cabecalho = new SSCabecalho();
 	private JPanel conteudo = new JPanel();
 	private SSRodape rodape = new SSRodape();
+	//private SSToolBar toolBar = new SSToolBar();
 	private MDI mdi;
 
 	public Formulario() {
 		init();
+		//addKeyListener(this);
+
 	}
 
+	
 	private void init() {
 		this.conteudo.setLayout(new GridBagLayout());
 		this.setLayout(new BorderLayout());
@@ -42,9 +49,12 @@ public abstract class Formulario extends JPanel {
 		this.setDescricao("Informe uma descrição");
 		this.add(cabecalho, BorderLayout.NORTH);
 		this.add(conteudo, BorderLayout.CENTER);
+		//this.add(toolBar, BorderLayout.SOUTH);
 		this.add(rodape, BorderLayout.SOUTH);
+		
 	}
 
+	
 	public void setTitulo(String titulo) {
 		this.cabecalho.setTitulo(titulo);
 	}
@@ -68,7 +78,11 @@ public abstract class Formulario extends JPanel {
 	public SSRodape getRodape() {
 		return rodape;
 	}
-
+/*
+	public SSToolBar getToolBar() {
+		return toolBar;
+	}
+*/	
 	public void setConteudoLayout(LayoutManager layout) {
 		conteudo.setLayout(layout);
 	}
@@ -85,7 +99,7 @@ public abstract class Formulario extends JPanel {
 		if (frm != this) {
 			frm.setMdi(this.getMdi());
 		}
-		JInternalFrame internal = new JInternalFrame("CFIP - Formulário");
+		JInternalFrame internal = new JInternalFrame("Tandera");
 		internal.setVisible(true);
 		internal.setResizable(true);
 		internal.setContentPane(frm);
@@ -96,8 +110,13 @@ public abstract class Formulario extends JPanel {
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		}
-		mdi.getAreaTrabalho().add(internal);
-		mdi.getAreaTrabalho().getDesktopManager().activateFrame(internal);
+
+		// formulario poderá ser chamado de uma dialogo
+		// neste caso não terá uma janela pai?
+		//if (mdi != null) {
+			mdi.getAreaTrabalho().add(internal);
+			mdi.getAreaTrabalho().getDesktopManager().activateFrame(internal);
+		//}
 	}
 
 	public void fechar(Object resposta) {
@@ -132,7 +151,12 @@ public abstract class Formulario extends JPanel {
 	}
 
 	private void centralizar(JInternalFrame componente) {
-		Dimension dim = mdi.getSize();
+		Dimension dim;
+		if (mdi != null) {
+			dim = mdi.getSize();
+		} else {
+			dim = this.getSize();
+		}
 		int x = dim.width / 2 - componente.getSize().width / 2;
 		int y = dim.height / 2 - componente.getSize().height / 2;
 		y = y - 50; // opcional
@@ -174,4 +198,21 @@ public abstract class Formulario extends JPanel {
 	public void load() {
 
 	}
+	
+	/*
+	 * public void configurarEsc(JPanel frame) { // Colocando enter para pular de
+	 * campo System.out.println("configurarEsc"); HashSet conj = new
+	 * HashSet(frame.getFocusTraversalKeys(KeyboardFocusManager.
+	 * FORWARD_TRAVERSAL_KEYS));
+	 * 
+	 * conj.add(AWTKeyStroke.getAWTKeyStroke(KeyEvent.VK_ESCAPE, 0));
+	 * System.out.println("configurarEsc 2");
+	 * frame.setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS,
+	 * conj); System.out.println("configurarEsc 3");
+	 * 
+	 * }
+	 */
+    
+
+    
 }

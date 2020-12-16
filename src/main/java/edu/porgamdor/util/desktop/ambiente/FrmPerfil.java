@@ -47,7 +47,7 @@ public class FrmPerfil extends JFrame {
 
 	private void init() {
 		this.setIconImage(Imagem.png("cfip", "janela").getImage());
-		setTitle("CFIP");
+		setTitle("Tandera");
 		setSize(new Dimension(259, 400));
 		setLocationRelativeTo(null);
 		txtSenha.setTudoMaiusculo(false);

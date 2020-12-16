@@ -2,10 +2,9 @@ package edu.porgamdor.util.desktop.ss;
 
 import java.awt.Dimension;
 
-import java.net.URL;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.KeyStroke;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 

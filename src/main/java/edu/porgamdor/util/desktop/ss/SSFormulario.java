@@ -194,6 +194,7 @@ public class SSFormulario {
         frame.setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS, conj);
     }
     
+    
     public static void centralizarFormularioInterno(JDesktopPane mdi, JInternalFrame form) {
         Dimension screenSize = mdi.getSize();
         Dimension frameSize = form.getSize();

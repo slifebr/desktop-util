@@ -1,15 +1,8 @@
 
 package edu.porgamdor.util.desktop.ss.util;
 
-import com.sun.org.apache.xpath.internal.functions.Function;
-
-import com.sun.org.apache.xpath.internal.operations.Mod;
-
 import java.text.ParseException;
-
 import java.text.SimpleDateFormat;
-
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
